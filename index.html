@@ -154,6 +154,27 @@
 
 <body class="bg-brand-dark text-slate-100 antialiased selection:bg-brand-accent selection:text-black relative">
 
+  <!-- SPLASH SCREEN: Pantalla de Carga Inicial con Video 3D -->
+  <div id="splashScreen" class="fixed inset-0 z-[99999] bg-[#080c14] flex flex-col items-center justify-center transition-opacity duration-1000 ease-out">
+    <div class="relative w-full max-w-sm sm:max-w-md px-6 flex flex-col items-center justify-center">
+      <video id="splashVideo" 
+             src="./assets/jqlogov1.mp4" 
+             autoplay 
+             muted 
+             playsinline 
+             class="w-full h-auto object-contain pointer-events-none drop-shadow-[0_0_35px_rgba(16,185,129,0.25)]">
+      </video>
+    </div>
+    <!-- Botón discreto para omitir la animación -->
+    <button id="skipSplashBtn" 
+            type="button" 
+            onclick="dismissSplash()" 
+            class="absolute bottom-8 right-8 font-mono text-[11px] text-slate-500 hover:text-emerald-400 uppercase tracking-widest transition-colors flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-800">
+      <span>Omitir</span>
+      <i class="fa-solid fa-forward-step text-[10px]"></i>
+    </button>
+  </div>
+
   <!-- Technical Background Canvas / Light Blobs -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
     <div class="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
@@ -1441,6 +1462,52 @@
         showToast('¡Mensaje enviado correctamente!');
       }, 1000);
     }
+
+    // 8. Splash Screen Logic (Animación de carga con video 3D)
+    (function initSplashScreen() {
+      const splash = document.getElementById('splashScreen');
+      const video = document.getElementById('splashVideo');
+      let isDismissed = false;
+
+      // Bloquear el scroll mientras la pantalla de carga está visible
+      document.body.style.overflow = 'hidden';
+
+      // Función para cerrar la Splash Screen con fade-out suave
+      window.dismissSplash = function() {
+        if (isDismissed || !splash) return;
+        isDismissed = true;
+
+        // Iniciar transición suave (opacidad a 0 en 1s)
+        splash.style.opacity = '0';
+        splash.style.pointerEvents = 'none';
+
+        // Ocultar por completo tras 1s y restaurar el scroll
+        setTimeout(() => {
+          splash.style.display = 'none';
+          document.body.style.overflow = '';
+        }, 1000);
+      };
+
+      if (video) {
+        // Escuchar el evento 'ended' del video
+        video.addEventListener('ended', dismissSplash);
+
+        // Si ocurre un error cargando el video o no se encuentra el archivo
+        video.addEventListener('error', () => {
+          console.warn('Video de animación no encontrado en ./assets/jqlogov1.mp4');
+          dismissSplash();
+        });
+
+        // Intentar reproducción automática
+        video.play().catch(() => {
+          // Si el navegador bloquea la reproducción automática, dar margen y cerrar
+          setTimeout(dismissSplash, 2000);
+        });
+      }
+
+      // Timeout de seguridad de 6 segundos en caso de fallo del evento
+      setTimeout(dismissSplash, 6000);
+    })();
   </script>
 
 </body>
