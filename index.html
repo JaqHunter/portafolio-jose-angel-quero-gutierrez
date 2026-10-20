@@ -6,7 +6,7 @@
   <title>Jose Angel Quero | Ingeniero de Sistemas & Analista Programador</title>
   <meta name="description" content="Portafolio profesional de Jose Angel Quero. Ingeniero de Sistemas con más de 21 años de experiencia en Software Corporativo, Aplicaciones Móviles Android, Sistemas POS, SAP ABAP e Integración de APIs." />
   <meta name="author" content="Jose Angel Quero" />
-  <link rel="icon" type="image/png" href="JQ.png" />
+  <link rel="icon" type="image/png" href="./JQ.png" />
 
   <!-- Google Fonts: Inter (Sans) & Fira Code (Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -166,11 +166,11 @@
   <header class="sticky top-0 z-40 backdrop-blur-md bg-brand-dark/85 border-b border-brand-border/80 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- LOGO AREA: Monograma JQ.png invertido -->
+      <!-- LOGO AREA: Monograma JQ.png invertido con ruta relativa -->
       <a href="#inicio" class="flex items-center gap-3.5 group" aria-label="Inicio - Jose Angel Quero">
         <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-1.5 shadow-md group-hover:border-brand-accent/60 transition-colors">
-          <!-- Logo con filter: invert(1) -->
-          <img src="JQ.png" alt="Logo JQ" class="h-full w-full object-contain logo-inverted" />
+          <!-- Logo con filter: invert(1) y ruta relativa ./JQ.png -->
+          <img src="./JQ.png" alt="Logo JQ" class="h-full w-full object-contain logo-inverted" />
         </div>
         <div class="flex flex-col">
           <span class="font-bold text-lg tracking-tight text-white group-hover:text-brand-accent transition-colors">
@@ -225,7 +225,7 @@
         <a href="#experiencia" class="mobile-nav-link py-2.5 px-3 rounded-lg hover:bg-slate-800 hover:text-brand-accent"># Experiencia y Consultoría</a>
         <a href="#contacto" class="mobile-nav-link py-2.5 px-3 rounded-lg hover:bg-slate-800 hover:text-brand-accent"># Contacto</a>
         <div class="pt-3 flex flex-col gap-2">
-          <a href="cv.pdf" download class="w-full text-center py-2.5 rounded-lg bg-slate-800 text-brand-steel border border-slate-700 font-semibold text-xs">
+          <a href="./cv.pdf" download class="w-full text-center py-2.5 rounded-lg bg-slate-800 text-brand-steel border border-slate-700 font-semibold text-xs">
             <i class="fa-solid fa-file-pdf mr-2 text-rose-400"></i> Descargar CV
           </a>
           <a href="https://wa.me/584144570503" target="_blank" class="w-full text-center py-2.5 rounded-lg bg-emerald-600 text-white font-semibold text-xs">
@@ -284,8 +284,8 @@
               <span>Contactar</span>
             </a>
 
-            <!-- CTA 3 Destacado: Descargar CV -->
-            <a href="cv.pdf" download="CV_Jose_Angel_Quero.pdf" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-950/80 to-slate-900 border-2 border-brand-steel/60 hover:border-brand-steel text-white hover:text-brand-steel font-bold text-sm tracking-wide transition-all duration-300 shadow-md hover:shadow-cyan-500/20 hover:-translate-y-0.5 flex items-center gap-2 font-mono">
+            <!-- CTA 3 Destacado: Descargar CV (Ruta Relativa) -->
+            <a href="./cv.pdf" download="CV_Jose_Angel_Quero.pdf" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-950/80 to-slate-900 border-2 border-brand-steel/60 hover:border-brand-steel text-white hover:text-brand-steel font-bold text-sm tracking-wide transition-all duration-300 shadow-md hover:shadow-cyan-500/20 hover:-translate-y-0.5 flex items-center gap-2 font-mono">
               <i class="fa-solid fa-file-arrow-down text-brand-steel text-base"></i>
               <span>Descargar CV</span>
             </a>
@@ -603,7 +603,8 @@
         <!-- CARD 1: Ecosistema POS y Gestión Empresarial (Visual Studio) -->
         <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-brand-steel/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
           <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
-            <img src="assets/projects/pos-erp.jpg" alt="Ecosistema POS y Gestión Empresarial" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <!-- Imagen con ruta relativa ./assets/projects/pos-erp.jpg -->
+            <img src="./assets/projects/pos-erp.jpg" alt="Ecosistema POS y Gestión Empresarial" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/30 to-transparent"></div>
             <div class="absolute top-4 left-4 flex gap-2 flex-wrap">
               <span class="px-3 py-1 rounded-full bg-slate-900/90 text-brand-steel border border-sky-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
@@ -655,7 +656,8 @@
         <!-- CARD 2: Desarrollo de Aplicaciones Móviles (Android) -->
         <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-emerald-500/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
           <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
-            <img src="assets/projects/mobile-android.jpg" alt="Desarrollo de Aplicaciones Móviles Android" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <!-- Imagen con ruta relativa ./assets/projects/mobile-android.jpg -->
+            <img src="./assets/projects/mobile-android.jpg" alt="Desarrollo de Aplicaciones Móviles Android" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/30 to-transparent"></div>
             <div class="absolute top-4 left-4 flex gap-2 flex-wrap">
               <span class="px-3 py-1 rounded-full bg-slate-900/90 text-emerald-400 border border-emerald-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
@@ -707,7 +709,8 @@
         <!-- CARD 3: Consultoría y Desarrollo SAP (ABAP) -->
         <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-emerald-500/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
           <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
-            <img src="assets/projects/sap-abap.jpg" alt="Consultoría y Desarrollo SAP ABAP" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <!-- Imagen con ruta relativa ./assets/projects/sap-abap.jpg -->
+            <img src="./assets/projects/sap-abap.jpg" alt="Consultoría y Desarrollo SAP ABAP" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/30 to-transparent"></div>
             <div class="absolute top-4 left-4 flex gap-2 flex-wrap">
               <span class="px-3 py-1 rounded-full bg-slate-900/90 text-emerald-400 border border-emerald-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
@@ -759,7 +762,8 @@
         <!-- CARD 4: Integración de APIs y Servicios de Terceros -->
         <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-brand-steel/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
           <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
-            <img src="assets/projects/api-integration.jpg" alt="Integración de APIs y Servicios de Terceros" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <!-- Imagen con ruta relativa ./assets/projects/api-integration.jpg -->
+            <img src="./assets/projects/api-integration.jpg" alt="Integración de APIs y Servicios de Terceros" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/30 to-transparent"></div>
             <div class="absolute top-4 left-4 flex gap-2 flex-wrap">
               <span class="px-3 py-1 rounded-full bg-slate-900/90 text-brand-steel border border-sky-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
@@ -1101,7 +1105,8 @@
       <!-- Logo & Credits -->
       <div class="flex items-center gap-3.5">
         <div class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center p-1">
-          <img src="JQ.png" alt="Logo JQ" class="h-full w-full object-contain logo-inverted" />
+          <!-- Logo con ruta relativa ./JQ.png -->
+          <img src="./JQ.png" alt="Logo JQ" class="h-full w-full object-contain logo-inverted" />
         </div>
         <div>
           <span class="font-bold text-white text-base">Jose Angel Quero</span>
@@ -1116,7 +1121,8 @@
         <a href="#portafolio" class="hover:text-brand-accent transition-colors">Portafolio</a>
         <a href="#experiencia" class="hover:text-brand-accent transition-colors">Experiencia</a>
         <a href="#contacto" class="hover:text-brand-accent transition-colors">Contacto</a>
-        <a href="cv.pdf" download class="text-brand-steel hover:underline">Descargar CV</a>
+        <!-- Enlace relativo a cv.pdf -->
+        <a href="./cv.pdf" download class="text-brand-steel hover:underline">Descargar CV</a>
       </div>
 
       <!-- Copyright -->
@@ -1282,12 +1288,12 @@
       showToast('Correo jaq7lr@gmail.com copiado al portapapeles');
     }
 
-    // 6. Project Modal Datasheet Information
+    // 6. Project Modal Datasheet Information con rutas relativas
     const projectDetails = {
       pos: {
         category: 'Visual Studio .NET & POS',
         title: 'Ecosistema POS y Gestión Empresarial',
-        image: 'assets/projects/pos-erp.jpg',
+        image: './assets/projects/pos-erp.jpg',
         description: `
           <p>Solución corporativa integral desarrollada en <strong>Visual Studio .NET (C# y VB.NET)</strong> con base de datos <strong>SQL Server</strong>, diseñada para soportar operaciones de alta concurrencia en comercios masivos y cadenas de retail.</p>
           <p><strong>Componentes Clave:</strong></p>
@@ -1303,7 +1309,7 @@
       android: {
         category: 'Desarrollo Android Nativo',
         title: 'Desarrollo de Aplicaciones Móviles (Android)',
-        image: 'assets/projects/mobile-android.jpg',
+        image: './assets/projects/mobile-android.jpg',
         description: `
           <p>Suite de herramientas móviles nativas para dispositivos <strong>Android</strong> y terminales portátiles <strong>PDA con scanner integrado</strong> (Zebra, Honeywell, Datalogic).</p>
           <p><strong>Soluciones Desarrolladas:</strong></p>
@@ -1318,7 +1324,7 @@
       sap: {
         category: 'ERP Empresarial SAP',
         title: 'Consultoría y Desarrollo SAP (ABAP/4)',
-        image: 'assets/projects/sap-abap.jpg',
+        image: './assets/projects/sap-abap.jpg',
         description: `
           <p>Consultoría técnica avanzada y programación ABAP en plataformas <strong>SAP ERP / ECC / S4HANA</strong> para optimizar la cadena de suministro y la contabilidad corporativa.</p>
           <p><strong>Alcance y Módulos:</strong></p>
@@ -1335,7 +1341,7 @@
       api: {
         category: 'Integración de APIs & Cloud',
         title: 'Integración de APIs y Servicios de Terceros',
-        image: 'assets/projects/api-integration.jpg',
+        image: './assets/projects/api-integration.jpg',
         description: `
           <p>Arquitectura de enlace entre los sistemas transaccionales locales (POS/ERP) y ecosistemas de servicios digitales en la nube.</p>
           <p><strong>Integraciones Destacadas:</strong></p>
