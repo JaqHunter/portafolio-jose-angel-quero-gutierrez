@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jose Angel Quero | Ingeniero de Sistemas & Analista Programador</title>
+  <meta name="description" content="Portafolio profesional de Jose Angel Quero. Ingeniero de Sistemas con más de 21 años de experiencia en Software Corporativo, Aplicaciones Móviles Android, Sistemas POS, SAP ABAP e Integración de APIs." />
+  <meta name="author" content="Jose Angel Quero" />
+  <link rel="icon" type="image/png" href="JQ.png" />
+
+  <!-- Google Fonts: Inter (Sans) & Fira Code (Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome CDN for High-Quality Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#080c14',
+              surface: '#0d1322',
+              card: '#11192e',
+              border: '#1e293b',
+              accent: '#10b981',       /* Emerald */
+              accentHover: '#059669',
+              steel: '#38bdf8',        /* Steel / Cyan Blue */
+              steelDark: '#0284c7',
+              muted: '#94a3b8'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace']
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-8px)' }
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 15px rgba(16, 185, 129, 0.2)' },
+              '100%': { boxShadow: '0 0 25px rgba(56, 189, 248, 0.4)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Technical Grid & Glassmorphism Styles */
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      background-color: #080c14;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Technical grid pattern background */
+    .bg-tech-grid {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .bg-tech-dots {
+      background-image: radial-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Glow utilities */
+    .text-glow-accent {
+      text-shadow: 0 0 16px rgba(16, 185, 129, 0.45);
+    }
+    .text-glow-steel {
+      text-shadow: 0 0 16px rgba(56, 189, 248, 0.45);
+    }
+
+    /* Invert logo to pure white on dark background */
+    .logo-inverted {
+      filter: invert(1);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .logo-inverted:hover {
+      transform: scale(1.08) rotate(-3deg);
+    }
+
+    /* Custom Modern Dialog Animation (@starting-style) */
+    dialog {
+      transition: opacity 0.25s ease-out, transform 0.25s ease-out, display 0.25s allow-discrete, overlay 0.25s allow-discrete;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    dialog[open] {
+      opacity: 1;
+      transform: scale(1);
+    }
+    @starting-style {
+      dialog[open] {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+    dialog::backdrop {
+      background-color: rgba(3, 7, 18, 0);
+      backdrop-filter: blur(0px);
+      transition: background-color 0.25s ease-out, backdrop-filter 0.25s ease-out, display 0.25s allow-discrete, overlay 0.25s allow-discrete;
+    }
+    dialog[open]::backdrop {
+      background-color: rgba(3, 7, 18, 0.75);
+      backdrop-filter: blur(6px);
+    }
+    @starting-style {
+      dialog[open]::backdrop {
+        background-color: rgba(3, 7, 18, 0);
+        backdrop-filter: blur(0px);
+      }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080c14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #10b981;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-dark text-slate-100 antialiased selection:bg-brand-accent selection:text-black relative">
+
+  <!-- Technical Background Canvas / Light Blobs -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+    <div class="absolute inset-0 bg-tech-grid opacity-80"></div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-brand-dark/85 border-b border-brand-border/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO AREA: Monograma JQ.png invertido -->
+      <a href="#inicio" class="flex items-center gap-3.5 group" aria-label="Inicio - Jose Angel Quero">
+        <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-1.5 shadow-md group-hover:border-brand-accent/60 transition-colors">
+          <!-- Logo con filter: invert(1) -->
+          <img src="JQ.png" alt="Logo JQ" class="h-full w-full object-contain logo-inverted" />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-lg tracking-tight text-white group-hover:text-brand-accent transition-colors">
+            Jose Angel Quero
+          </span>
+          <span class="font-mono text-xs text-brand-steel flex items-center gap-1.5">
+            <span class="inline-block w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+            ING. DE SISTEMAS // DEV
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-slate-300">
+        <a href="#inicio" class="px-3.5 py-2 rounded-lg hover:text-brand-accent hover:bg-slate-800/50 transition-colors">Inicio</a>
+        <a href="#sobre-mi" class="px-3.5 py-2 rounded-lg hover:text-brand-accent hover:bg-slate-800/50 transition-colors">Sobre Mí</a>
+        <a href="#stack" class="px-3.5 py-2 rounded-lg hover:text-brand-accent hover:bg-slate-800/50 transition-colors">Stack</a>
+        <a href="#portafolio" class="px-3.5 py-2 rounded-lg hover:text-brand-accent hover:bg-slate-800/50 transition-colors">Portafolio</a>
+        <a href="#experiencia" class="px-3.5 py-2 rounded-lg hover:text-brand-accent hover:bg-slate-800/50 transition-colors">Experiencia</a>
+        <a href="#contacto" class="px-3.5 py-2 rounded-lg hover:text-brand-accent hover:bg-slate-800/50 transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="https://wa.me/584144570503?text=Hola%20Ing.%20Jose%20Angel%20Quero,%20me%20gustar%C3%ADa%20consultar%20sobre%20sus%20servicios" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-950/70 text-emerald-400 border border-emerald-800/80 hover:bg-emerald-900 hover:text-white font-mono text-xs transition-all shadow-sm">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>WhatsApp Directo</span>
+        </a>
+        <a href="#contacto" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-accent text-slate-950 font-semibold text-xs uppercase tracking-wider hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/20 transition-all font-mono">
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+          <span>Contactar</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" type="button" aria-label="Abrir menú" class="md:hidden p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none">
+        <i id="menuIcon" class="fa-solid fa-bars text-lg"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-6 bg-brand-surface/95 border-b border-brand-border/80 backdrop-blur-lg">
+      <nav class="flex flex-col gap-2 font-mono text-sm">
+        <a href="#inicio" class="mobile-nav-link py-2.5 px-3 rounded-lg hover:bg-slate-800 hover:text-brand-accent"># Inicio</a>
+        <a href="#sobre-mi" class="mobile-nav-link py-2.5 px-3 rounded-lg hover:bg-slate-800 hover:text-brand-accent"># Sobre Mí</a>
+        <a href="#stack" class="mobile-nav-link py-2.5 px-3 rounded-lg hover:bg-slate-800 hover:text-brand-accent"># Stack Tecnológico</a>
+        <a href="#portafolio" class="mobile-nav-link py-2.5 px-3 rounded-lg hover:bg-slate-800 hover:text-brand-accent"># Portafolio de Proyectos</a>
+        <a href="#experiencia" class="mobile-nav-link py-2.5 px-3 rounded-lg hover:bg-slate-800 hover:text-brand-accent"># Experiencia y Consultoría</a>
+        <a href="#contacto" class="mobile-nav-link py-2.5 px-3 rounded-lg hover:bg-slate-800 hover:text-brand-accent"># Contacto</a>
+        <div class="pt-3 flex flex-col gap-2">
+          <a href="cv.pdf" download class="w-full text-center py-2.5 rounded-lg bg-slate-800 text-brand-steel border border-slate-700 font-semibold text-xs">
+            <i class="fa-solid fa-file-pdf mr-2 text-rose-400"></i> Descargar CV
+          </a>
+          <a href="https://wa.me/584144570503" target="_blank" class="w-full text-center py-2.5 rounded-lg bg-emerald-600 text-white font-semibold text-xs">
+            <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp: +58 0414-457-05-03
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- 1. HERO SECTION (INICIO) -->
+    <section id="inicio" class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Copy & Actions -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Technical Status Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-emerald-400 font-mono text-xs shadow-inner">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>CONSULTORÍA & DESARROLLO DISPONIBLE</span>
+          </div>
+
+          <!-- Saludo Personal -->
+          <p class="font-mono text-sm sm:text-base text-brand-steel tracking-wide">
+            &gt; const saludo = <span class="text-emerald-400">"Hola, soy Jose Angel Quero."</span>;
+          </p>
+
+          <!-- Titular Principal -->
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Ingeniero de Sistemas <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-blue-500">
+              Especialista en Software Corporativo,
+            </span> <br />
+            Aplicaciones Móviles y Sistemas POS.
+          </h1>
+
+          <!-- Subtítulo -->
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-light">
+            Más de <span class="text-white font-semibold underline decoration-emerald-500 decoration-2 underline-offset-4">21 años de experiencia</span> transformando la lógica de negocios en soluciones de software eficientes, escalables y a medida.
+          </p>
+
+          <!-- Botones CTA -->
+          <div class="pt-4 flex flex-wrap items-center gap-4">
+            <!-- CTA 1: Ver Portafolio -->
+            <a href="#portafolio" class="px-6 py-3.5 rounded-xl bg-brand-accent hover:bg-emerald-400 text-slate-950 font-bold text-sm tracking-wide uppercase transition-all duration-300 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 hover:-translate-y-0.5 flex items-center gap-2 font-mono">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span>Ver Portafolio</span>
+            </a>
+
+            <!-- CTA 2: Contactar -->
+            <a href="#contacto" class="px-6 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 hover:border-slate-500 font-medium text-sm tracking-wide transition-all duration-300 flex items-center gap-2 font-mono">
+              <i class="fa-solid fa-envelope text-brand-steel"></i>
+              <span>Contactar</span>
+            </a>
+
+            <!-- CTA 3 Destacado: Descargar CV -->
+            <a href="cv.pdf" download="CV_Jose_Angel_Quero.pdf" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-950/80 to-slate-900 border-2 border-brand-steel/60 hover:border-brand-steel text-white hover:text-brand-steel font-bold text-sm tracking-wide transition-all duration-300 shadow-md hover:shadow-cyan-500/20 hover:-translate-y-0.5 flex items-center gap-2 font-mono">
+              <i class="fa-solid fa-file-arrow-down text-brand-steel text-base"></i>
+              <span>Descargar CV</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="pt-8 border-t border-brand-border/80 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="bg-brand-surface/60 border border-slate-800/80 rounded-xl p-3.5 text-center">
+              <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">+21</div>
+              <div class="text-xs text-slate-400 font-medium uppercase mt-0.5">Años de Exp.</div>
+            </div>
+            <div class="bg-brand-surface/60 border border-slate-800/80 rounded-xl p-3.5 text-center">
+              <div class="text-2xl sm:text-3xl font-extrabold text-brand-steel font-mono">100%</div>
+              <div class="text-xs text-slate-400 font-medium uppercase mt-0.5">Misión Crítica</div>
+            </div>
+            <div class="bg-brand-surface/60 border border-slate-800/80 rounded-xl p-3.5 text-center">
+              <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">+50</div>
+              <div class="text-xs text-slate-400 font-medium uppercase mt-0.5">Clientes Corp.</div>
+            </div>
+            <div class="bg-brand-surface/60 border border-slate-800/80 rounded-xl p-3.5 text-center">
+              <div class="text-2xl sm:text-3xl font-extrabold text-brand-steel font-mono">SAP/POS</div>
+              <div class="text-xs text-slate-400 font-medium uppercase mt-0.5">Especialidad</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Technical Terminal / System Dashboard Card -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl bg-brand-surface/90 border border-slate-800 p-1 shadow-2xl backdrop-blur-xl relative group">
+            
+            <!-- Terminal Header -->
+            <div class="bg-slate-900/90 rounded-t-xl px-4 py-3 border-b border-slate-800 flex items-center justify-between font-mono text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                <span class="text-slate-400 ml-2">quero_system_kernel.exe</span>
+              </div>
+              <span class="text-emerald-400 text-[11px] flex items-center gap-1">
+                <i class="fa-solid fa-server"></i> ONLINE
+              </span>
+            </div>
+
+            <!-- Terminal Body -->
+            <div class="p-5 font-mono text-xs sm:text-sm text-slate-300 space-y-3 bg-[#0a0f1d] rounded-b-xl overflow-x-auto">
+              <p class="text-slate-500">// Perfil de Ejecución del Sistema</p>
+              
+              <div class="space-y-1">
+                <span class="text-brand-steel">engineer</span> = {
+                <div class="pl-4 space-y-1">
+                  <div>nombre: <span class="text-emerald-300">"Jose Angel Quero"</span>,</div>
+                  <div>cargo: <span class="text-emerald-300">"Ingeniero de Sistemas & Analista Programador"</span>,</div>
+                  <div>trayectoria: <span class="text-amber-300">&gt; 21 años continuos</span>,</div>
+                  <div>ubicacion: <span class="text-emerald-300">"Maracay, Venezuela"</span>,</div>
+                  <div>core_ecosystem: [</div>
+                  <div class="pl-4 text-slate-400">
+                    <span class="text-sky-300">"Visual Studio .NET (WinForms, MAUI)"</span>,<br />
+                    <span class="text-sky-300">"Desarrollo Android Nativo (PDA/Móvil)"</span>,<br />
+                    <span class="text-sky-300">"Sistemas POS e Impresoras Fiscales"</span>,<br />
+                    <span class="text-sky-300">"SAP ABAP/4 &amp; ITS Mobile"</span>,<br />
+                    <span class="text-sky-300">"SQL Server &amp; Optimización T-SQL"</span>,<br />
+                    <span class="text-sky-300">"Integración APIs (Yummy, The Factory HKA)"</span>
+                  </div>
+                  <div>],</div>
+                  <div>estado_disponibilidad: <span class="text-emerald-400 font-bold">"PROYECTOS &amp; CONSULTORÍA"</span></div>
+                </div>
+                };
+              </div>
+
+              <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                <span class="flex items-center gap-1 text-emerald-400">
+                  <i class="fa-solid fa-check-double"></i> Arquitectura 100% Robusta
+                </span>
+                <span class="text-slate-500">v2026.04</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. SOBRE MÍ & STACK TECNOLÓGICO -->
+    <section id="sobre-mi" class="py-20 bg-brand-surface/40 border-y border-brand-border/70 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-brand-steel font-mono text-xs mb-3">
+            <i class="fa-solid fa-user-gear"></i>
+            <span>SECCIÓN 02 // TRAYECTORIA TÉCNICA</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Sobre Mí &amp; Enfoque de Ingeniería
+          </h2>
+          <p class="text-slate-400 mt-3 text-base sm:text-lg">
+            Compromiso con el software robusto, la automatización corporativa y la estabilidad en operaciones de alto volumen transaccional.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          <!-- Descripción Profesional -->
+          <div class="lg:col-span-5 space-y-5 text-slate-300 leading-relaxed text-sm sm:text-base">
+            <div class="p-6 rounded-2xl bg-brand-surface/90 border border-slate-800 space-y-4">
+              <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-terminal text-brand-accent"></i>
+                Ingeniería orientada a resultados reales
+              </h3>
+              <p>
+                Como <strong class="text-white">Ingeniero de Sistemas y Analista Programador</strong>, cuento con más de <strong class="text-emerald-400">21 años</strong> de experiencia práctica diseñando, implementando y asegurando la continuidad de plataformas empresariales críticas.
+              </p>
+              <p>
+                Mi especialidad abarca el <strong class="text-white">desarrollo backend</strong>, la <strong class="text-white">automatización de escritorio</strong> para entornos industriales y comerciales, el despliegue de <strong class="text-white">aplicaciones móviles nativas Android</strong> para captura de datos en piso de venta, y la <strong class="text-white">gestión avanzada de ERP corporativos (SAP)</strong>.
+              </p>
+              <p class="text-slate-400 text-sm">
+                Combino la rigurosidad técnica de la arquitectura de software con una profunda comprensión de los procesos contables, inventarios, compras, almacén y facturación fiscal/digital.
+              </p>
+            </div>
+
+            <!-- Highlights checklist -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs text-slate-300">
+              <div class="flex items-center gap-2 p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                <i class="fa-solid fa-circle-check text-brand-accent"></i>
+                <span>Cero caídas en POS</span>
+              </div>
+              <div class="flex items-center gap-2 p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                <i class="fa-solid fa-circle-check text-brand-steel"></i>
+                <span>Movilidad Android Nativa</span>
+              </div>
+              <div class="flex items-center gap-2 p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                <i class="fa-solid fa-circle-check text-brand-accent"></i>
+                <span>ABAP / SAP Optimizado</span>
+              </div>
+              <div class="flex items-center gap-2 p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                <i class="fa-solid fa-circle-check text-brand-steel"></i>
+                <span>T-SQL de Alto Rendimiento</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STACK TECNOLÓGICO: Grid & Badges -->
+          <div id="stack" class="lg:col-span-7">
+            <div class="p-6 sm:p-8 rounded-2xl bg-brand-surface/90 border border-slate-800">
+              <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2.5 font-mono">
+                  <i class="fa-solid fa-layer-group text-brand-accent"></i>
+                  Stack Tecnológico Principal
+                </h3>
+                <span class="font-mono text-xs text-slate-400">Core Technologies</span>
+              </div>
+
+              <!-- Grid de Tecnologías Solicitadas -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <!-- 1. Visual Studio .NET -->
+                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-steel/60 transition-all group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-purple-950/60 border border-purple-800/60 flex items-center justify-center text-purple-400 text-lg group-hover:scale-105 transition-transform">
+                      <i class="fa-brands fa-microsoft"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white text-sm group-hover:text-brand-steel transition-colors">Visual Studio .NET</h4>
+                      <p class="font-mono text-xs text-slate-400">C#, VB.NET, WinForms, MAUI</p>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-2.5">
+                    Sistemas POS, control contable, módulos backstore y herramientas de alto desempeño.
+                  </p>
+                </div>
+
+                <!-- 2. Desarrollo Android -->
+                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/60 transition-all group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-950/60 border border-emerald-800/60 flex items-center justify-center text-emerald-400 text-lg group-hover:scale-105 transition-transform">
+                      <i class="fa-brands fa-android"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white text-sm group-hover:text-emerald-400 transition-colors">Desarrollo Android</h4>
+                      <p class="font-mono text-xs text-slate-400">Móvil Nativo, Scanners &amp; PDA</p>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-2.5">
+                    Apps operativas para toma de inventario, MBC Business Center y consulta de precios.
+                  </p>
+                </div>
+
+                <!-- 3. Java -->
+                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/60 transition-all group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-amber-950/60 border border-amber-800/60 flex items-center justify-center text-amber-400 text-lg group-hover:scale-105 transition-transform">
+                      <i class="fa-brands fa-java"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white text-sm group-hover:text-amber-400 transition-colors">Java</h4>
+                      <p class="font-mono text-xs text-slate-400">Core, Servicios &amp; Movilidad</p>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-2.5">
+                    Lógica empresarial robusta, utilitarios de datos y componentes multiplataforma.
+                  </p>
+                </div>
+
+                <!-- 4. SQL Server -->
+                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/60 transition-all group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-blue-950/60 border border-blue-800/60 flex items-center justify-center text-blue-400 text-lg group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-database"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white text-sm group-hover:text-blue-400 transition-colors">SQL Server</h4>
+                      <p class="font-mono text-xs text-slate-400">T-SQL, Stored Procs, Tuning</p>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-2.5">
+                    Modelado relacional complejo, disparadores, transacciones y alto volumen transaccional.
+                  </p>
+                </div>
+
+                <!-- 5. MySQL -->
+                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/60 transition-all group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/60 flex items-center justify-center text-cyan-400 text-lg group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-server"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white text-sm group-hover:text-cyan-400 transition-colors">MySQL</h4>
+                      <p class="font-mono text-xs text-slate-400">Bases de Datos &amp; Replicación</p>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-2.5">
+                    Diseño y administración de esquemas, consultas analíticas y sincronización.
+                  </p>
+                </div>
+
+                <!-- 6. SAP (ABAP/4, Basis) -->
+                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/60 transition-all group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-950/60 border border-emerald-800/60 flex items-center justify-center text-emerald-300 text-lg group-hover:scale-105 transition-transform font-mono font-black">
+                      SAP
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white text-sm group-hover:text-emerald-400 transition-colors">SAP (ABAP/4 &amp; Basis)</h4>
+                      <p class="font-mono text-xs text-slate-400">Trx, ALV, BAPI, SD/FI/MM/CO</p>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-2.5">
+                    Desarrollo a medida, interfaces de ventas, cargas masivas y reportes avanzados.
+                  </p>
+                </div>
+
+                <!-- 7. ITS Mobile -->
+                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-purple-500/60 transition-all group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-purple-950/60 border border-purple-800/60 flex items-center justify-center text-purple-400 text-lg group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-barcode"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white text-sm group-hover:text-purple-400 transition-colors">ITS Mobile</h4>
+                      <p class="font-mono text-xs text-slate-400">SAP RF &amp; Terminales Industriales</p>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-2.5">
+                    Soluciones de almacén por radiofrecuencia conectadas en tiempo real al ERP.
+                  </p>
+                </div>
+
+                <!-- 8. APIs REST -->
+                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-sky-500/60 transition-all group">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-sky-950/60 border border-sky-800/60 flex items-center justify-center text-sky-400 text-lg group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white text-sm group-hover:text-sky-400 transition-colors">APIs REST</h4>
+                      <p class="font-mono text-xs text-slate-400">Integración &amp; Web Services</p>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-2.5">
+                    Consumo y publicación de endpoints, sincronización Yummy y Facturación The Factory HKA.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. PORTAFOLIO DE PROYECTOS Y SOLUCIONES -->
+    <section id="portafolio" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-brand-steel font-mono text-xs mb-3">
+          <i class="fa-solid fa-cubes"></i>
+          <span>SECCIÓN 03 // SOLUCIONES CORPORATIVAS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Portafolio de Proyectos y Soluciones
+        </h2>
+        <p class="text-slate-400 mt-3 text-base sm:text-lg">
+          Sistemas implementados y probados en producción continua bajo altos estándares de disponibilidad y precisión contable.
+        </p>
+      </div>
+
+      <!-- 4 TARJETAS TÉCNICAS (CARDS) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- CARD 1: Ecosistema POS y Gestión Empresarial (Visual Studio) -->
+        <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-brand-steel/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
+          <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
+            <img src="assets/projects/pos-erp.jpg" alt="Ecosistema POS y Gestión Empresarial" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 flex gap-2 flex-wrap">
+              <span class="px-3 py-1 rounded-full bg-slate-900/90 text-brand-steel border border-sky-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
+                Visual Studio .NET
+              </span>
+              <span class="px-3 py-1 rounded-full bg-slate-900/90 text-emerald-400 border border-emerald-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
+                POS &amp; ERP
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-5">
+            <div class="space-y-3">
+              <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-brand-steel transition-colors">
+                Ecosistema POS y Gestión Empresarial (Visual Studio)
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Desarrollo integral de sistemas abarcando Contabilidad, Cuentas por Pagar, Punto de Venta (con soporte para impresora fiscal y facturación digital API), Captura de Inventario, Gestión de Taller, <strong class="text-white underline decoration-emerald-400">Consultor de Precios</strong> y sincronización directa con SAP.
+              </p>
+
+              <!-- Technical features bullets -->
+              <ul class="space-y-2 pt-2 text-xs font-mono text-slate-400">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-brand-accent mt-0.5"></i>
+                  <span>Punto de Venta con protocolo para impresoras fiscales y facturación digital.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-brand-accent mt-0.5"></i>
+                  <span>Módulos de Contabilidad, Cuentas por Pagar y Gestión de Taller.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-brand-accent mt-0.5"></i>
+                  <span>Consultor de Precios en tiempo real sincronizado con SAP.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card Footer / Actions -->
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="font-mono text-xs text-slate-500">Stack: C# / VB.NET / SQL</span>
+              <button onclick="openProjectModal('pos')" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-brand-steel hover:text-white font-mono text-xs font-medium transition-colors">
+                <span>Ficha Técnica</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: Desarrollo de Aplicaciones Móviles (Android) -->
+        <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-emerald-500/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
+          <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
+            <img src="assets/projects/mobile-android.jpg" alt="Desarrollo de Aplicaciones Móviles Android" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 flex gap-2 flex-wrap">
+              <span class="px-3 py-1 rounded-full bg-slate-900/90 text-emerald-400 border border-emerald-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
+                Desarrollo Android
+              </span>
+              <span class="px-3 py-1 rounded-full bg-slate-900/90 text-brand-steel border border-sky-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
+                Movilidad Nativa
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-5">
+            <div class="space-y-3">
+              <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                Desarrollo de Aplicaciones Móviles (Android)
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Creación de herramientas operativas nativas, incluyendo <strong class="text-white">Captura de Inventario</strong>, <strong class="text-white underline decoration-emerald-400">MBC Business Center</strong> y sistemas de <strong class="text-white">Consulta de Precios</strong>, diseñadas para optimizar la movilidad y el flujo de trabajo en piso de venta y almacén.
+              </p>
+
+              <!-- Technical features bullets -->
+              <ul class="space-y-2 pt-2 text-xs font-mono text-slate-400">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-emerald-400 mt-0.5"></i>
+                  <span>Optimización de inventario físico y conteo cíclico mediante terminales PDA.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-emerald-400 mt-0.5"></i>
+                  <span>Suite MBC Business Center para gestión comercial y operativa distribuida.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-emerald-400 mt-0.5"></i>
+                  <span>Escaneo de código de barras rápido y verificación instantánea en góndola.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card Footer / Actions -->
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="font-mono text-xs text-slate-500">Stack: Android / Java / SQLite / REST</span>
+              <button onclick="openProjectModal('android')" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 hover:text-white font-mono text-xs font-medium transition-colors">
+                <span>Ficha Técnica</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3: Consultoría y Desarrollo SAP (ABAP) -->
+        <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-emerald-500/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
+          <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
+            <img src="assets/projects/sap-abap.jpg" alt="Consultoría y Desarrollo SAP ABAP" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 flex gap-2 flex-wrap">
+              <span class="px-3 py-1 rounded-full bg-slate-900/90 text-emerald-400 border border-emerald-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
+                SAP ABAP/4
+              </span>
+              <span class="px-3 py-1 rounded-full bg-slate-900/90 text-amber-400 border border-amber-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
+                ITS Mobile &amp; Zebra
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-5">
+            <div class="space-y-3">
+              <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                Consultoría y Desarrollo SAP (ABAP)
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Creación de transacciones (Trx) a medida, contabilización de ventas, impresión de etiquetas en impresoras Zebra, implementación de ITS Mobile, carga masiva de inventarios y desarrollo de reportes avanzados para módulos SD, FI, MM, CO y HR.
+              </p>
+
+              <!-- Technical features bullets -->
+              <ul class="space-y-2 pt-2 text-xs font-mono text-slate-400">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-emerald-400 mt-0.5"></i>
+                  <span>Transacciones a medida (Z-Programs) con validación contable inmediata.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-emerald-400 mt-0.5"></i>
+                  <span>Formatos ZPL y scripts para impresión térmica industrial en equipos Zebra.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-emerald-400 mt-0.5"></i>
+                  <span>Implementación de ITS Mobile para operaciones de almacén en tiempo real.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card Footer / Actions -->
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="font-mono text-xs text-slate-500">Stack: ABAP / ITS Mobile / SAP Basis</span>
+              <button onclick="openProjectModal('sap')" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 hover:text-white font-mono text-xs font-medium transition-colors">
+                <span>Ficha Técnica</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4: Integración de APIs y Servicios de Terceros -->
+        <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-brand-steel/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
+          <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
+            <img src="assets/projects/api-integration.jpg" alt="Integración de APIs y Servicios de Terceros" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 flex gap-2 flex-wrap">
+              <span class="px-3 py-1 rounded-full bg-slate-900/90 text-brand-steel border border-sky-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
+                APIs REST &amp; Cloud
+              </span>
+              <span class="px-3 py-1 rounded-full bg-slate-900/90 text-emerald-400 border border-emerald-700/60 font-mono text-xs font-semibold backdrop-blur-sm">
+                The Factory HKA &amp; Yummy
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-5">
+            <div class="space-y-3">
+              <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-brand-steel transition-colors">
+                Integración de APIs y Servicios de Terceros
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Conexión de sistemas internos con plataformas externas, incluyendo la sincronización de stock de inventario con la API de Yummy y la implementación de facturación electrónica a través de la API de The Factory HKA.
+              </p>
+
+              <!-- Technical features bullets -->
+              <ul class="space-y-2 pt-2 text-xs font-mono text-slate-400">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-brand-steel mt-0.5"></i>
+                  <span>Sincronización bidireccional de existencias y pedidos con la API de Yummy.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-brand-steel mt-0.5"></i>
+                  <span>Facturación electrónica automatizada bajo normativas fiscales con The Factory HKA.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-chevron-right text-brand-steel mt-0.5"></i>
+                  <span>Gestión de colas, tokens OAuth2, reintentos automáticos y logs de auditoría.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card Footer / Actions -->
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="font-mono text-xs text-slate-500">Stack: REST / JSON / OAuth / Webhooks</span>
+              <button onclick="openProjectModal('api')" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-brand-steel hover:text-white font-mono text-xs font-medium transition-colors">
+                <span>Ficha Técnica</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- 4. EXPERIENCIA LABORAL Y CONSULTORÍA -->
+    <section id="experiencia" class="py-20 bg-brand-surface/40 border-y border-brand-border/70 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-brand-steel font-mono text-xs mb-3">
+            <i class="fa-solid fa-timeline"></i>
+            <span>SECCIÓN 04 // TRAYECTORIA Y CLIENTES</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Experiencia Laboral y Consultoría
+          </h2>
+          <p class="text-slate-400 mt-3 text-base sm:text-lg">
+            Un historial comprobado de liderazgo técnico, desarrollo continuo y formación de talento de ingeniería.
+          </p>
+        </div>
+
+        <!-- Vertical Timeline with Technical Aesthetic -->
+        <div class="relative border-l-2 border-slate-800 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-12">
+          
+          <!-- ITEM 1: Serv. Generales Atenas / C.C. Macuto I (21 años) -->
+          <div class="relative group">
+            <!-- Timeline glowing node -->
+            <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-6 h-6 rounded-full bg-brand-dark border-2 border-emerald-400 flex items-center justify-center group-hover:scale-125 transition-transform">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            </div>
+
+            <div class="p-6 sm:p-8 rounded-2xl bg-brand-surface/90 border border-slate-800 hover:border-emerald-500/50 transition-all shadow-lg">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="px-3 py-1 rounded-md bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 font-mono text-xs font-bold">
+                  21 AÑOS DE TRAYECTORIA CONTINUA
+                </span>
+                <span class="font-mono text-xs text-slate-400">Liderazgo &amp; Operaciones Críticas</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Serv. Generales Atenas / C.C. Macuto I
+              </h3>
+              <h4 class="text-brand-steel font-mono text-sm font-semibold mt-1">
+                Jefe de POS, Consultor ABAP y Analista Programador
+              </h4>
+              <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+                Responsable del desarrollo integral y mantenimiento de sistemas POS, módulos contables y backstore. Dirección técnica de la infraestructura transaccional de caja, integración de dispositivos fiscales, control de inventario en tiempo real y conciliación contable para operaciones comerciales masivas.
+              </p>
+            </div>
+          </div>
+
+          <!-- ITEM 2: Desarrollador Freelance y Consultor Técnico -->
+          <div class="relative group">
+            <!-- Timeline glowing node -->
+            <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-6 h-6 rounded-full bg-brand-dark border-2 border-brand-steel flex items-center justify-center group-hover:scale-125 transition-transform">
+              <span class="w-2 h-2 rounded-full bg-brand-steel"></span>
+            </div>
+
+            <div class="p-6 sm:p-8 rounded-2xl bg-brand-surface/90 border border-slate-800 hover:border-brand-steel/50 transition-all shadow-lg">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="px-3 py-1 rounded-md bg-sky-950/80 text-brand-steel border border-sky-800/80 font-mono text-xs font-bold">
+                  CONSULTORÍA CORPORATIVA &amp; CLIENTES LÍDERES
+                </span>
+                <span class="font-mono text-xs text-slate-400">Proyectos Estratégicos</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Desarrollador Freelance y Consultor Técnico
+              </h3>
+              <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+                Implementación de soluciones de software y consultoría técnica para empresas líderes como <strong class="text-white">Grupo la Caridad</strong> y <strong class="text-white">Locatel</strong>.
+              </p>
+              <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
+                A través de la consultora <strong class="text-brand-accent">Hardsoft</strong>, desarrollo de proyectos estratégicos para clientes corporativos de primer nivel:
+              </p>
+
+              <!-- Badges de Clientes Corporativos -->
+              <div class="flex flex-wrap gap-2.5 pt-4">
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white font-mono text-xs font-semibold">Canveas</span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white font-mono text-xs font-semibold">Agrollanos</span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white font-mono text-xs font-semibold">Cibus</span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white font-mono text-xs font-semibold">Indigo</span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white font-mono text-xs font-semibold">Oriplus</span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white font-mono text-xs font-semibold">Fundición Pacífico</span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white font-mono text-xs font-semibold">Venilac</span>
+                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white font-mono text-xs font-semibold">Propisca</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 3: Docencia Universitaria (IUTA e IUPSM - 6 años) -->
+          <div class="relative group">
+            <!-- Timeline glowing node -->
+            <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-6 h-6 rounded-full bg-brand-dark border-2 border-purple-400 flex items-center justify-center group-hover:scale-125 transition-transform">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+            </div>
+
+            <div class="p-6 sm:p-8 rounded-2xl bg-brand-surface/90 border border-slate-800 hover:border-purple-500/50 transition-all shadow-lg">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="px-3 py-1 rounded-md bg-purple-950/80 text-purple-300 border border-purple-800/80 font-mono text-xs font-bold">
+                  6 AÑOS DE ACTIVIDAD ACADÉMICA
+                </span>
+                <span class="font-mono text-xs text-slate-400">Formación Universitaria</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Profesor Universitario, Tutor y Jurado de Tesis (IUTA e IUPSM - 6 años)
+              </h3>
+              <h4 class="text-purple-300 font-mono text-sm font-semibold mt-1">
+                Docencia e Investigación en Ingeniería
+              </h4>
+              <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+                Formación de estudiantes de ingeniería en <strong class="text-white">Estructura de Datos</strong>, <strong class="text-white">Inteligencia Artificial</strong>, <strong class="text-white">Algoritmos</strong> y <strong class="text-white">Lenguajes de Programación (I al IV)</strong>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. CONTACTO -->
+    <section id="contacto" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-brand-steel font-mono text-xs mb-3">
+          <i class="fa-solid fa-address-book"></i>
+          <span>SECCIÓN 05 // CANALES DIRECTOS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Hablemos de su Próximo Proyecto
+        </h2>
+        <p class="text-slate-400 mt-3 text-base sm:text-lg">
+          Disponible para consultoría técnica, desarrollo de software corporativo a medida y modernización de sistemas empresariales.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Left: Contact Data & Direct Action Buttons -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <div class="p-6 sm:p-8 rounded-2xl bg-brand-surface/90 border border-slate-800 space-y-6">
+            <h3 class="text-xl font-bold text-white font-mono flex items-center gap-2.5">
+              <i class="fa-solid fa-id-card text-brand-accent"></i>
+              Datos de Contacto
+            </h3>
+
+            <!-- Ubicación -->
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+              <div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/80 flex items-center justify-center text-emerald-400 shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <div class="text-xs font-mono text-slate-400 uppercase">Ubicación</div>
+                <div class="text-white font-medium text-sm sm:text-base mt-0.5">Maracay, Aragua, Venezuela.</div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+              <div class="w-10 h-10 rounded-lg bg-sky-950/80 border border-sky-800/80 flex items-center justify-center text-brand-steel shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs font-mono text-slate-400 uppercase">Correo Electrónico</div>
+                <a href="mailto:jaq7lr@gmail.com" class="text-white hover:text-brand-steel font-medium text-sm sm:text-base mt-0.5 block truncate transition-colors">
+                  jaq7lr@gmail.com
+                </a>
+                <button onclick="copyEmailToClipboard()" type="button" class="mt-2 text-xs font-mono text-brand-steel hover:text-emerald-400 inline-flex items-center gap-1.5 transition-colors">
+                  <i class="fa-regular fa-copy"></i>
+                  <span>Copiar al portapapeles</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- WhatsApp / Teléfono -->
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+              <div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/80 flex items-center justify-center text-emerald-400 shrink-0">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+              </div>
+              <div>
+                <div class="text-xs font-mono text-slate-400 uppercase">Teléfono / WhatsApp</div>
+                <a href="tel:+5804144570503" class="text-white hover:text-emerald-400 font-medium text-sm sm:text-base mt-0.5 block transition-colors">
+                  +58 0414-457-05-03
+                </a>
+                <a href="https://wa.me/584144570503" target="_blank" rel="noopener noreferrer" class="mt-2 text-xs font-mono text-emerald-400 hover:underline inline-flex items-center gap-1">
+                  <span>Abrir conversación en WhatsApp</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Enlaces Directos de Alta Visibilidad -->
+            <div class="pt-4 space-y-3">
+              <a href="https://wa.me/584144570503?text=Hola%20Ing.%20Jose%20Angel%20Quero,%20deseo%20conversar%20sobre%20un%20proyecto" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm tracking-wide transition-all shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2.5 font-mono">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Escribir al WhatsApp (+58 0414-457-05-03)</span>
+              </a>
+
+              <a href="mailto:jaq7lr@gmail.com?subject=Consulta%20Profesional%20-%20Portafolio%20Web" 
+                 class="w-full py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold text-sm tracking-wide transition-all border border-slate-700 flex items-center justify-center gap-2.5 font-mono">
+                <i class="fa-solid fa-paper-plane text-brand-steel"></i>
+                <span>Enviar Correo Directo</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Functional Contact Form (Ready for Formspree) -->
+        <div class="lg:col-span-7">
+          <div class="p-6 sm:p-8 rounded-2xl bg-brand-surface/90 border border-slate-800 shadow-xl">
+            <div class="mb-6">
+              <h3 class="text-xl font-bold text-white font-mono flex items-center gap-2">
+                <i class="fa-solid fa-envelope-open-text text-brand-steel"></i>
+                Formulario de Contacto
+              </h3>
+              <p class="text-xs text-slate-400 mt-1">
+                Envíe su requerimiento técnico para recibir una propuesta personalizada.
+              </p>
+            </div>
+
+            <!-- Form: Configurable for Formspree -->
+            <form id="contactForm" class="space-y-5" onsubmit="handleContactSubmit(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block font-mono text-xs text-slate-300 mb-1.5">Nombre o Empresa *</label>
+                  <input type="text" id="name" name="name" required placeholder="Ej. Carlos Mendoza / Inversiones C.A." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent text-white placeholder-slate-500 text-sm outline-none transition-colors" />
+                </div>
+                <div>
+                  <label for="email" class="block font-mono text-xs text-slate-300 mb-1.5">Correo Electrónico *</label>
+                  <input type="email" id="email" name="email" required placeholder="ejemplo@empresa.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent text-white placeholder-slate-500 text-sm outline-none transition-colors" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="phone" class="block font-mono text-xs text-slate-300 mb-1.5">Teléfono / WhatsApp</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+58 414..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent text-white placeholder-slate-500 text-sm outline-none transition-colors" />
+                </div>
+                <div>
+                  <label for="service" class="block font-mono text-xs text-slate-300 mb-1.5">Área de Interés *</label>
+                  <select id="service" name="service" required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent text-white text-sm outline-none transition-colors">
+                    <option value="pos">Sistemas POS / Facturación Fiscal</option>
+                    <option value="android">Desarrollo de Apps Móviles (Android)</option>
+                    <option value="sap">Consultoría &amp; Desarrollo SAP ABAP</option>
+                    <option value="api">Integración de APIs / Facturación Electrónica</option>
+                    <option value="consultoria">Consultoría Integral de Sistemas</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="message" class="block font-mono text-xs text-slate-300 mb-1.5">Mensaje o Detalle del Proyecto *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Describa brevemente los requerimientos, plataforma actual o necesidades de su empresa..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent text-white placeholder-slate-500 text-sm outline-none transition-colors resize-y"></textarea>
+              </div>
+
+              <!-- Submit button -->
+              <div class="pt-2">
+                <button type="submit" id="submitBtn" class="w-full py-4 px-6 rounded-xl bg-brand-accent hover:bg-emerald-400 text-slate-950 font-bold text-sm tracking-wider uppercase transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 font-mono">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span id="btnText">Enviar Mensaje</span>
+                </button>
+              </div>
+
+              <!-- Status Alert Box -->
+              <div id="formStatus" class="hidden p-4 rounded-xl text-xs font-mono border"></div>
+
+              <p class="text-[11px] text-slate-500 font-mono text-center">
+                * Para conectar este formulario en producción, solo agregue su endpoint de Formspree en el atributo <code>action</code> del formulario.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-surface/90 border-t border-brand-border py-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Logo & Credits -->
+      <div class="flex items-center gap-3.5">
+        <div class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center p-1">
+          <img src="JQ.png" alt="Logo JQ" class="h-full w-full object-contain logo-inverted" />
+        </div>
+        <div>
+          <span class="font-bold text-white text-base">Jose Angel Quero</span>
+          <p class="text-xs text-slate-400 font-mono">Ingeniero de Sistemas | Analista Programador</p>
+        </div>
+      </div>
+
+      <!-- Quick nav links -->
+      <div class="flex flex-wrap justify-center gap-6 font-mono text-xs text-slate-400">
+        <a href="#inicio" class="hover:text-brand-accent transition-colors">Inicio</a>
+        <a href="#sobre-mi" class="hover:text-brand-accent transition-colors">Sobre Mí</a>
+        <a href="#portafolio" class="hover:text-brand-accent transition-colors">Portafolio</a>
+        <a href="#experiencia" class="hover:text-brand-accent transition-colors">Experiencia</a>
+        <a href="#contacto" class="hover:text-brand-accent transition-colors">Contacto</a>
+        <a href="cv.pdf" download class="text-brand-steel hover:underline">Descargar CV</a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-xs text-slate-500 font-mono text-center md:text-right">
+        &copy; <span id="currentYear">2026</span> Jose Angel Quero. <br />
+        Todos los derechos reservados.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING QUICK ACTIONS -->
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/584144570503?text=Hola%20Ing.%20Jose%20Angel%20Quero" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Contactar por WhatsApp" 
+     class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-110 transition-transform">
+    <i class="fa-brands fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Scroll to Top Floating Button -->
+  <button id="scrollToTopBtn" 
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
+          aria-label="Volver arriba" 
+          class="fixed bottom-6 left-6 z-40 w-11 h-11 rounded-full bg-slate-900/90 border border-slate-700 text-slate-300 hover:text-white hover:border-brand-accent flex items-center justify-center shadow-lg transition-all opacity-0 pointer-events-none">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed top-6 right-6 z-50 transform -translate-y-16 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-900 border border-emerald-500/80 text-white shadow-2xl font-mono text-xs">
+      <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+      <span id="toastMessage">Correo copiado al portapapeles</span>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE PROJECT DETAILS MODAL (<dialog>) -->
+  <dialog id="projectModal" class="rounded-2xl bg-brand-surface border border-slate-700 text-slate-100 p-0 max-w-2xl w-11/12 shadow-2xl overflow-hidden">
+    <div class="p-6 sm:p-8 space-y-6">
+      
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span id="modalCategory" class="px-2.5 py-1 rounded bg-slate-800 text-brand-steel font-mono text-xs font-semibold"></span>
+          <h3 id="modalTitle" class="text-xl sm:text-2xl font-bold text-white mt-2"></h3>
+        </div>
+        <button onclick="closeProjectModal()" type="button" aria-label="Cerrar ventana" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="space-y-4 text-sm text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
+        <img id="modalImage" src="" alt="Vista previa del proyecto" class="w-full h-48 object-cover rounded-xl border border-slate-800 mb-4" />
+        <div id="modalDescription" class="space-y-3"></div>
+
+        <div class="pt-4 border-t border-slate-800">
+          <h4 class="font-mono text-xs uppercase text-brand-accent font-bold mb-2">Arquitectura &amp; Tecnologías Clave:</h4>
+          <div id="modalBadges" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-800">
+        <a href="#contacto" onclick="closeProjectModal()" class="px-4 py-2 rounded-lg bg-brand-accent text-slate-950 font-bold text-xs uppercase font-mono hover:bg-emerald-400 transition-colors">
+          Consultar por esta Solución
+        </a>
+        <button onclick="closeProjectModal()" type="button" class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs hover:bg-slate-700 transition-colors">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- PURE VANILLA JAVASCRIPT LOGIC -->
+  <script>
+    // 1. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-xmark');
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        }
+      });
+
+      // Close mobile menu on clicking any navigation link
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        });
+      });
+    }
+
+    // 2. Dynamic Year in Footer
+    const currentYearEl = document.getElementById('currentYear');
+    if (currentYearEl) {
+      currentYearEl.textContent = new Date().getFullYear();
+    }
+
+    // 3. Scroll to Top Floating Button visibility
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+        scrollToTopBtn.classList.add('opacity-100');
+      } else {
+        scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+        scrollToTopBtn.classList.remove('opacity-100');
+      }
+    });
+
+    // 4. Toast Notification
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toastMessage');
+      if (!toast || !toastMessage) return;
+
+      toastMessage.textContent = message;
+      toast.classList.remove('-translate-y-16', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('-translate-y-16', 'opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    // 5. Copy Email to Clipboard
+    function copyEmailToClipboard() {
+      const email = 'jaq7lr@gmail.com';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          showToast('Correo jaq7lr@gmail.com copiado al portapapeles');
+        }).catch(() => {
+          fallbackCopy(email);
+        });
+      } else {
+        fallbackCopy(email);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const input = document.createElement('input');
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      showToast('Correo jaq7lr@gmail.com copiado al portapapeles');
+    }
+
+    // 6. Project Modal Datasheet Information
+    const projectDetails = {
+      pos: {
+        category: 'Visual Studio .NET & POS',
+        title: 'Ecosistema POS y Gestión Empresarial',
+        image: 'assets/projects/pos-erp.jpg',
+        description: `
+          <p>Solución corporativa integral desarrollada en <strong>Visual Studio .NET (C# y VB.NET)</strong> con base de datos <strong>SQL Server</strong>, diseñada para soportar operaciones de alta concurrencia en comercios masivos y cadenas de retail.</p>
+          <p><strong>Componentes Clave:</strong></p>
+          <ul class="list-disc pl-5 space-y-1 text-slate-300">
+            <li><strong>Punto de Venta (POS):</strong> Integración de impresoras fiscales homologadas (Bixolon, Dascom, Epson, HKA), lectoras de códigos y balanzas comerciales.</li>
+            <li><strong>Facturación Digital:</strong> Conexión con servicios de facturación electrónica y contingencia fuera de línea.</li>
+            <li><strong>Consultor de Precios:</strong> Terminales interactivas para clientes con lectura inmediata de código de barras y promociones.</li>
+            <li><strong>Módulos de Gestión:</strong> Contabilidad general, Cuentas por Pagar (CxP), Gestión de Taller y control de inventarios físicos con sincronización directa hacia SAP.</li>
+          </ul>
+        `,
+        badges: ['Visual Studio .NET', 'C#', 'VB.NET', 'SQL Server', 'Impresoras Fiscales', 'SAP Sync', 'WinForms']
+      },
+      android: {
+        category: 'Desarrollo Android Nativo',
+        title: 'Desarrollo de Aplicaciones Móviles (Android)',
+        image: 'assets/projects/mobile-android.jpg',
+        description: `
+          <p>Suite de herramientas móviles nativas para dispositivos <strong>Android</strong> y terminales portátiles <strong>PDA con scanner integrado</strong> (Zebra, Honeywell, Datalogic).</p>
+          <p><strong>Soluciones Desarrolladas:</strong></p>
+          <ul class="list-disc pl-5 space-y-1 text-slate-300">
+            <li><strong>Captura de Inventario:</strong> Conteo físico de almacén, auditorías cíclicas y validación de mermas con exportación inmediata hacia el servidor central.</li>
+            <li><strong>MBC Business Center:</strong> Plataforma operativa móvil para supervisión de ventas, recepción de mercancías y gestión de flujo de trabajo en piso comercial.</li>
+            <li><strong>Consulta de Precios:</strong> Verificación ágil de stock, precios actualizados y etiquetas en góndolas en tiempo real.</li>
+          </ul>
+        `,
+        badges: ['Android SDK', 'Java', 'SQLite', 'PDA Scanners', 'Barcode API', 'APIs REST', 'MBC Business Center']
+      },
+      sap: {
+        category: 'ERP Empresarial SAP',
+        title: 'Consultoría y Desarrollo SAP (ABAP/4)',
+        image: 'assets/projects/sap-abap.jpg',
+        description: `
+          <p>Consultoría técnica avanzada y programación ABAP en plataformas <strong>SAP ERP / ECC / S4HANA</strong> para optimizar la cadena de suministro y la contabilidad corporativa.</p>
+          <p><strong>Alcance y Módulos:</strong></p>
+          <ul class="list-disc pl-5 space-y-1 text-slate-300">
+            <li><strong>Transacciones Z a Medida:</strong> Interfaces intuitivas para usuarios finales y validación estricta de documentos contables.</li>
+            <li><strong>Impresión Zebra:</strong> Generación de etiquetas térmicas con lenguaje ZPL para pallets, cajas y productos individuales.</li>
+            <li><strong>ITS Mobile:</strong> Despliegue de transacciones de radiofrecuencia para terminales industriales en almacenes.</li>
+            <li><strong>Carga Masiva:</strong> Procesos BAPI y batch input para actualización masiva de inventarios y listas de precios.</li>
+            <li><strong>Módulos cubiertos:</strong> SD (Ventas), FI (Finanzas), MM (Materiales), CO (Control de Costos) y HR (Recursos Humanos).</li>
+          </ul>
+        `,
+        badges: ['SAP ABAP/4', 'ITS Mobile', 'Zebra ZPL', 'BAPIs', 'Módulos SD/FI/MM/CO/HR', 'SAP Basis']
+      },
+      api: {
+        category: 'Integración de APIs & Cloud',
+        title: 'Integración de APIs y Servicios de Terceros',
+        image: 'assets/projects/api-integration.jpg',
+        description: `
+          <p>Arquitectura de enlace entre los sistemas transaccionales locales (POS/ERP) y ecosistemas de servicios digitales en la nube.</p>
+          <p><strong>Integraciones Destacadas:</strong></p>
+          <ul class="list-disc pl-5 space-y-1 text-slate-300">
+            <li><strong>API de Yummy:</strong> Sincronización en tiempo real de inventarios disponibles, precios, recepción de órdenes de compra y actualización de despachos.</li>
+            <li><strong>The Factory HKA:</strong> Emisión automática de comprobantes y facturas electrónicas vía API REST, cumpliendo con la normativa tributaria y validación de firmas digitales.</li>
+            <li><strong>Manejo de Contingencias:</strong> Colas de reintentos asíncronas para garantizar que ninguna transacción se pierda ante cortes de conectividad.</li>
+          </ul>
+        `,
+        badges: ['APIs REST', 'Yummy API', 'The Factory HKA', 'JSON / XML', 'OAuth2', 'Webhooks', 'C# / .NET']
+      }
+    };
+
+    const projectModal = document.getElementById('projectModal');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalBadges = document.getElementById('modalBadges');
+
+    function openProjectModal(projectId) {
+      const data = projectDetails[projectId];
+      if (!data || !projectModal) return;
+
+      modalCategory.textContent = data.category;
+      modalTitle.textContent = data.title;
+      modalImage.src = data.image;
+      modalImage.alt = data.title;
+      modalDescription.innerHTML = data.description;
+
+      modalBadges.innerHTML = data.badges.map(badge => `
+        <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 text-slate-300 font-mono text-xs">
+          ${badge}
+        </span>
+      `).join('');
+
+      projectModal.showModal();
+    }
+
+    function closeProjectModal() {
+      if (projectModal) {
+        projectModal.close();
+      }
+    }
+
+    // Close modal on click outside backdrop
+    if (projectModal) {
+      projectModal.addEventListener('click', (event) => {
+        const rect = projectModal.getBoundingClientRect();
+        const isInDialog = (
+          rect.top <= event.clientY &&
+          event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX &&
+          event.clientX <= rect.left + rect.width
+        );
+        if (!isInDialog) {
+          projectModal.close();
+        }
+      });
+    }
+
+    // 7. Contact Form Simulation (Ready to be wired to Formspree)
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const statusDiv = document.getElementById('formStatus');
+
+      // Visual sending state
+      submitBtn.disabled = true;
+      btnText.textContent = 'Enviando...';
+      submitBtn.classList.add('opacity-75');
+
+      setTimeout(() => {
+        // Success feedback
+        statusDiv.className = 'p-4 rounded-xl text-xs font-mono border bg-emerald-950/80 border-emerald-500 text-emerald-300 block space-y-1';
+        statusDiv.innerHTML = `
+          <div class="font-bold flex items-center gap-2">
+            <i class="fa-solid fa-circle-check"></i>
+            ¡Mensaje procesado con éxito!
+          </div>
+          <div>Gracias por comunicarse. El Ing. Jose Angel Quero le responderá a la brevedad posible.</div>
+        `;
+
+        form.reset();
+        submitBtn.disabled = false;
+        btnText.textContent = 'Enviar Mensaje';
+        submitBtn.classList.remove('opacity-75');
+
+        showToast('¡Mensaje enviado correctamente!');
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
