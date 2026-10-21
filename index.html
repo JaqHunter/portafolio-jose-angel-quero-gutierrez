@@ -5,8 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jose Angel Quero | Ingeniero de Sistemas & Analista Programador</title>
   <meta name="description" content="Portafolio profesional de Jose Angel Quero. Ingeniero de Sistemas con más de 21 años de experiencia en Software Corporativo, Aplicaciones Móviles Android, Sistemas POS, SAP ABAP e Integración de APIs." />
-  <meta name="author" content="Jose Angel Quero" />
   <link rel="icon" type="image/png" href="./JQ.png" />
+
+  <!-- Open Graph & Social SEO (WhatsApp, LinkedIn, Telegram, Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jose Angel Quero | Ingeniero de Sistemas & Analista Programador" />
+  <meta property="og:description" content="Más de 21 años de experiencia transformando la lógica de negocios en soluciones eficientes: Software Corporativo, Aplicaciones Móviles Android, Sistemas POS, SAP ABAP e Integración de APIs." />
+  <meta property="og:image" content="./JQ.png" />
+  <meta property="og:image:alt" content="Logo Jose Angel Quero" />
+  <meta property="og:site_name" content="Portafolio Jose Angel Quero" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Jose Angel Quero | Ingeniero de Sistemas & Analista Programador" />
+  <meta name="twitter:description" content="Más de 21 años de experiencia en Software Corporativo, Aplicaciones Móviles Android, Sistemas POS, SAP ABAP e Integración de APIs." />
+  <meta name="twitter:image" content="./JQ.png" />
+
+  <!-- Theme Color para Navegadores Móviles -->
+  <meta name="theme-color" content="#080c14" />
 
   <!-- Google Fonts: Inter (Sans) & Fira Code (Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -148,6 +164,74 @@
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #10b981;
+    }
+
+    /* Animación suave para filtrado de proyectos */
+    @keyframes projectFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .animate-project-fade {
+      animation: projectFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Estilos Especiales para Imprimir o Guardar Resumen en PDF (Ctrl + P) */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+      }
+      #splashScreen,
+      #scrollToTopBtn,
+      #skipSplashBtn,
+      #mobileMenuBtn,
+      #mobileMenu,
+      header,
+      footer,
+      #contacto,
+      .fixed,
+      dialog,
+      #portfolioFilterBar {
+        display: none !important;
+      }
+      .bg-tech-grid,
+      .bg-tech-dots {
+        background: none !important;
+      }
+      .bg-brand-dark,
+      .bg-brand-surface,
+      .bg-slate-900,
+      .bg-slate-950 {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        border-color: #cbd5e1 !important;
+        box-shadow: none !important;
+      }
+      h1, h2, h3, h4, strong {
+        color: #0f172a !important;
+      }
+      .text-slate-300,
+      .text-slate-400,
+      .text-slate-500 {
+        color: #334155 !important;
+      }
+      .text-emerald-400,
+      .text-brand-steel {
+        color: #0284c7 !important;
+        font-weight: 700 !important;
+      }
+      article {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid #cbd5e1 !important;
+        margin-bottom: 1.5rem !important;
+      }
     }
   </style>
 </head>
@@ -310,6 +394,12 @@
               <i class="fa-solid fa-file-arrow-down text-brand-steel text-base"></i>
               <span>Descargar CV</span>
             </a>
+
+            <!-- CTA 4: Imprimir / Guardar Resumen en PDF -->
+            <button onclick="window.print()" type="button" aria-label="Imprimir o guardar resumen en PDF" class="px-5 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 hover:border-slate-500 font-mono text-xs transition-all duration-300 flex items-center gap-2">
+              <i class="fa-solid fa-print text-emerald-400 text-sm"></i>
+              <span>Imprimir Resumen</span>
+            </button>
           </div>
 
           <!-- Quick Metrics Bar -->
@@ -335,8 +425,9 @@
         </div>
 
         <!-- Right Column: Interactive Technical Terminal / System Dashboard Card -->
+        <!-- Right Column: Interactive Technical Terminal / System Dashboard Card (Alternativa D) -->
         <div class="lg:col-span-5">
-          <div class="rounded-2xl bg-brand-surface/90 border border-slate-800 p-1 shadow-2xl backdrop-blur-xl relative group">
+          <div class="rounded-2xl bg-brand-surface/90 border border-slate-800 p-1 shadow-2xl backdrop-blur-xl relative group hover:border-slate-700 transition-all duration-300">
             
             <!-- Terminal Header -->
             <div class="bg-slate-900/90 rounded-t-xl px-4 py-3 border-b border-slate-800 flex items-center justify-between font-mono text-xs">
@@ -346,20 +437,26 @@
                 <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
                 <span class="text-slate-400 ml-2">quero_system_kernel.exe</span>
               </div>
-              <span class="text-emerald-400 text-[11px] flex items-center gap-1">
-                <i class="fa-solid fa-server"></i> ONLINE
-              </span>
+              <div class="flex items-center gap-2.5">
+                <button onclick="copyKernelProfile(this)" type="button" aria-label="Copiar ficha técnica en formato JSON" title="Copiar ficha técnica al portapapeles" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 border border-slate-700/80 text-[11px] flex items-center gap-1.5 transition-all">
+                  <i class="fa-regular fa-copy"></i>
+                  <span>Copiar JSON</span>
+                </button>
+                <span class="text-emerald-400 text-[11px] flex items-center gap-1">
+                  <i class="fa-solid fa-server"></i> ONLINE
+                </span>
+              </div>
             </div>
 
             <!-- Terminal Body -->
             <div class="p-5 font-mono text-xs sm:text-sm text-slate-300 space-y-3 bg-[#0a0f1d] rounded-b-xl overflow-x-auto">
-              <p class="text-slate-500">// Perfil de Ejecución del Sistema</p>
+              <p class="text-slate-500">// Perfil de Ejecución del Sistema v2026.04</p>
               
               <div class="space-y-1">
                 <span class="text-brand-steel">engineer</span> = {
                 <div class="pl-4 space-y-1">
                   <div>nombre: <span class="text-emerald-300">"Jose Angel Quero"</span>,</div>
-                  <div>cargo: <span class="text-emerald-300">"Ingeniero de Sistemas & Analista Programador"</span>,</div>
+                  <div>cargo: <span class="text-emerald-300">"Ingeniero de Sistemas &amp; Analista Programador"</span>,</div>
                   <div>trayectoria: <span class="text-amber-300">&gt; 21 años continuos</span>,</div>
                   <div>ubicacion: <span class="text-emerald-300">"Maracay, Venezuela"</span>,</div>
                   <div>core_ecosystem: [</div>
@@ -369,7 +466,8 @@
                     <span class="text-sky-300">"Sistemas POS e Impresoras Fiscales"</span>,<br />
                     <span class="text-sky-300">"SAP ABAP/4 &amp; ITS Mobile"</span>,<br />
                     <span class="text-sky-300">"SQL Server &amp; Optimización T-SQL"</span>,<br />
-                    <span class="text-sky-300">"Integración APIs (Yummy, The Factory HKA)"</span>
+                    <span class="text-sky-300">"Pasarelas &amp; Pagos (Megasoft, Cashea)"</span>,<br />
+                    <span class="text-sky-300">"APIs Cloud (Yummy, The Factory HKA)"</span>
                   </div>
                   <div>],</div>
                   <div>estado_disponibilidad: <span class="text-emerald-400 font-bold">"PROYECTOS &amp; CONSULTORÍA"</span></div>
@@ -381,7 +479,10 @@
                 <span class="flex items-center gap-1 text-emerald-400">
                   <i class="fa-solid fa-check-double"></i> Arquitectura 100% Robusta
                 </span>
-                <span class="text-slate-500">v2026.04</span>
+                <span class="text-slate-500 font-mono flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                  v2026.04
+                </span>
               </div>
             </div>
 
@@ -618,11 +719,30 @@
         </p>
       </div>
 
+      <!-- Filtro Interactivo de Proyectos (Propuesta 3) -->
+      <div id="portfolioFilterBar" class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
+        <button onclick="filterProjects('all', this)" type="button" class="filter-btn active-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all duration-200 bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 shadow-sm shadow-emerald-500/10">
+          <i class="fa-solid fa-layer-group mr-1.5"></i>Todos (4)
+        </button>
+        <button onclick="filterProjects('pos', this)" type="button" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all duration-200 bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700">
+          <i class="fa-solid fa-cash-register mr-1.5"></i>POS &amp; ERP
+        </button>
+        <button onclick="filterProjects('android', this)" type="button" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all duration-200 bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700">
+          <i class="fa-brands fa-android mr-1.5"></i>Móvil Android
+        </button>
+        <button onclick="filterProjects('sap', this)" type="button" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all duration-200 bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700">
+          <i class="fa-solid fa-cubes-stacked mr-1.5"></i>SAP ABAP
+        </button>
+        <button onclick="filterProjects('api', this)" type="button" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all duration-200 bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700">
+          <i class="fa-solid fa-network-wired mr-1.5"></i>APIs &amp; Pagos
+        </button>
+      </div>
+
       <!-- 4 TARJETAS TÉCNICAS (CARDS) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <!-- CARD 1: Ecosistema POS y Gestión Empresarial (Visual Studio) -->
-        <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-brand-steel/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
+        <article data-project-category="pos" class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-brand-steel/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
           <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
             <!-- Imagen con ruta relativa ./assets/projects/pos-erp.jpg -->
             <img src="./assets/projects/pos-erp.jpg" alt="Ecosistema POS y Gestión Empresarial" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -675,7 +795,7 @@
         </article>
 
         <!-- CARD 2: Desarrollo de Aplicaciones Móviles (Android) -->
-        <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-emerald-500/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
+        <article data-project-category="android" class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-emerald-500/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
           <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
             <!-- Imagen con ruta relativa ./assets/projects/mobile-android.jpg -->
             <img src="./assets/projects/mobile-android.jpg" alt="Desarrollo de Aplicaciones Móviles Android" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -728,7 +848,7 @@
         </article>
 
         <!-- CARD 3: Consultoría y Desarrollo SAP (ABAP) -->
-        <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-emerald-500/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
+        <article data-project-category="sap" class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-emerald-500/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
           <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
             <!-- Imagen con ruta relativa ./assets/projects/sap-abap.jpg -->
             <img src="./assets/projects/sap-abap.jpg" alt="Consultoría y Desarrollo SAP ABAP" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -781,7 +901,7 @@
         </article>
 
         <!-- CARD 4: Integración de APIs y Servicios de Terceros -->
-        <article class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-brand-steel/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
+        <article data-project-category="api" class="rounded-2xl bg-brand-surface/90 border border-slate-800 overflow-hidden hover:border-brand-steel/60 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
           <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
             <!-- Imagen con ruta relativa ./assets/projects/api-integration.jpg -->
             <img src="./assets/projects/api-integration.jpg" alt="Integración de APIs y Servicios de Terceros" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -1526,6 +1646,91 @@
       // Timeout de seguridad de 6 segundos en caso de fallo del evento
       setTimeout(dismissSplash, 6000);
     })();
+
+    // 9. Filtrado Interactivo de Proyectos por Categoría (Propuesta 3)
+    function filterProjects(category, activeBtn) {
+      const filterBtns = document.querySelectorAll('#portfolioFilterBar .filter-btn');
+      const defaultBtnClass = 'filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all duration-200 bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700';
+      const activeBtnClass = 'filter-btn active-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all duration-200 bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 shadow-sm shadow-emerald-500/10';
+
+      filterBtns.forEach(btn => {
+        btn.className = defaultBtnClass;
+      });
+
+      if (activeBtn) {
+        activeBtn.className = activeBtnClass;
+      }
+
+      const cards = document.querySelectorAll('article[data-project-category]');
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-project-category');
+        if (category === 'all' || cat === category) {
+          card.classList.remove('hidden');
+          card.classList.remove('animate-project-fade');
+          // Reiniciar animación CSS
+          void card.offsetWidth;
+          card.classList.add('animate-project-fade');
+        } else {
+          card.classList.add('hidden');
+          card.classList.remove('animate-project-fade');
+        }
+      });
+    }
+
+    // 10. Sistema Global de Notificaciones Toast
+    function showToast(message) {
+      let toast = document.getElementById('globalToast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'globalToast';
+        toast.className = 'fixed bottom-6 right-6 z-50 px-4 py-3 rounded-xl bg-slate-900/95 border border-emerald-500/80 text-emerald-300 font-mono text-xs shadow-2xl flex items-center gap-2 transform transition-all duration-300 translate-y-20 opacity-0 pointer-events-none';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i> <span>${message}</span>`;
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    // 11. Copiar Ficha Técnica JSON del Hero al Portapapeles (Alternativa D)
+    function copyKernelProfile(buttonElement) {
+      const profileData = {
+        engineer: "Jose Angel Quero",
+        title: "Ingeniero de Sistemas & Analista Programador",
+        experience: "+21 años continuos",
+        location: "Maracay, Venezuela",
+        core_ecosystem: [
+          "Visual Studio .NET (WinForms, MAUI)",
+          "Desarrollo Android Nativo (PDA/Móvil)",
+          "Sistemas POS e Impresoras Fiscales",
+          "SAP ABAP/4 & ITS Mobile",
+          "SQL Server & Optimización T-SQL",
+          "Pasarelas & Pagos (Megasoft, Cashea)",
+          "APIs Cloud (Yummy, The Factory HKA)"
+        ],
+        availability: "PROYECTOS & CONSULTORÍA",
+        contact: "https://portafolio-quero.github.io"
+      };
+
+      const jsonString = JSON.stringify(profileData, null, 2);
+
+      navigator.clipboard.writeText(jsonString).then(() => {
+        if (buttonElement) {
+          const originalHTML = buttonElement.innerHTML;
+          buttonElement.innerHTML = `<i class="fa-solid fa-check text-emerald-400"></i><span class="text-emerald-400 font-bold">¡Copiado!</span>`;
+          buttonElement.classList.add('border-emerald-500/60');
+
+          setTimeout(() => {
+            buttonElement.innerHTML = originalHTML;
+            buttonElement.classList.remove('border-emerald-500/60');
+          }, 2000);
+        }
+        showToast('Ficha técnica copiada al portapapeles');
+      }).catch(() => {
+        showToast('No se pudo copiar automáticamente');
+      });
+    }
   </script>
 
 </body>
